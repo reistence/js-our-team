@@ -37,8 +37,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   gap: 1em;
-  background: linear-gradient(rgba(96, 22, 22, 0.335), rgb(85, 10, 10));
-  border-radius: 10px;
+  background: linear-gradient(rgba(96, 22, 22, 0.235), rgb(85, 10, 10));
 }
 
 .card {
@@ -55,4 +54,42 @@ body {
 
 .card p:nth-child(2) {
   font-weight: bold;
+}
+
+.join {
+  margin: 0em auto 2em;
+  padding: 2em 1em;
+  display: flex;
+  border-radius: 0px 0px 10px 10px;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+  background: linear-gradient(rgb(85, 10, 10), rgba(96, 22, 22, 0.235));
+}
+
+.form {
+  padding: 1em 2em;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+.form input {
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  width: 100%;
+  margin-top: 0.5em;
+}
+.form button {
+  background-color: rgba(0, 0, 0, 0.141);
+  color: white;
+  border: 1px solid white;
+  padding: 1em;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2em;
 }

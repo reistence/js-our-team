@@ -62,9 +62,33 @@ const team = [
   },
 ];
 
-console.log(team);
-
 const row = document.querySelector(".row");
+const joinBtn = document.getElementById("join");
+const userNameInput = document.getElementById("name");
+const userRoleInput = document.getElementById("role");
+
+joinBtn.addEventListener("click", function () {
+  let userName = userNameInput.value;
+  let userRole = userRoleInput.value;
+
+  const newMember = {
+    name: userName,
+    role: userRole,
+  };
+
+  team.push(newMember);
+  console.log(team);
+  row.innerHTML += `
+     <div class="card">
+            <img src="https://picsum.photos/322/345" alt="${newMember.name}" srcset="" />
+            <p id="name">${newMember.name}</p>
+            <p id="role">${newMember.role}</p>
+    </div>
+  `;
+
+  userNameInput.value = "";
+  userRoleInput.value = "";
+});
 
 for (let i = 0; i < team.length; i++) {
   const currentMember = team[i];
