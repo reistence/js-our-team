@@ -1,29 +1,4 @@
-/* DATA
-Wayne Barnett	Founder & CEO	        wayne-barnett-founder-ceo.jpg
-Angela Caroll	Chief Editor	        angela-caroll-chief-editor.jpg
-Walter Gordon	Office Manager	        walter-gordon-office-manager.jpg
-Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg
-Scott Estrada	Developer	            scott-estrada-developer.jpg
-Barbara Ramos	Graphic Designer	    barbara-ramos-graphic-designer.jpg
-
-EXERCISE
-Utilizzando i dati forniti, creare un array di oggetti 
-per rappresentare i membri del team.
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
-MILESTONE 1:
-Stampare su console le informazioni di nome, ruolo e la 
-stringa della foto
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede. 
-
-*/
-
-// objects array
+// objects array --> team
 const team = [
   {
     name: "Wayne Barnett",
@@ -62,22 +37,25 @@ const team = [
   },
 ];
 
+//grab hmtl elements
 const row = document.querySelector(".row");
 const joinBtn = document.getElementById("join");
 const userNameInput = document.getElementById("name");
 const userRoleInput = document.getElementById("role");
 
+// join the team btn
 joinBtn.addEventListener("click", function () {
+  // grab input values given by the user
   let userName = userNameInput.value;
   let userRole = userRoleInput.value;
-
+  // create a new object member
   const newMember = {
     name: userName,
     role: userRole,
   };
-
+  //add newmember to team
   team.push(newMember);
-  console.log(team);
+  // add newmemebr in row.inenrHtml
   row.innerHTML += `
      <div class="card">
             <img src="https://picsum.photos/322/345" alt="${newMember.name}" srcset="" />
@@ -85,11 +63,12 @@ joinBtn.addEventListener("click", function () {
             <p id="role">${newMember.role}</p>
     </div>
   `;
-
+  // Empty fields
   userNameInput.value = "";
   userRoleInput.value = "";
 });
 
+// Add memebers into row.innerHTML iterating through each memeber
 for (let i = 0; i < team.length; i++) {
   const currentMember = team[i];
   console.log(currentMember);
